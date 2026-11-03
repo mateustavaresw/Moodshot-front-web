@@ -5,14 +5,14 @@ function FormField({ label, id, error, as = "input", children, ...props }) {
 
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block font-bold">
+      <label htmlFor={id} className="mb-2 block font-mono text-xs uppercase tracking-widest text-slate-400">
         {label}
       </label>
 
       <Field
         id={id}
         name={id}
-        className={`w-full rounded-lg border ${borderColor} bg-[#070A12] p-3 outline-none focus:border-[#168BFF]`}
+        className={`w-full border ${borderColor} bg-ink p-3 outline-none transition placeholder:text-slate-600 focus:border-azul`}
         {...props}
       >
         {children}

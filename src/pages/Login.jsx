@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import FormField from "../components/FormField";
+import FrameCorners from "../components/FrameCorners";
 import useAuth from "../hooks/useAuth";
 import useForm from "../hooks/useForm";
 
@@ -48,17 +49,23 @@ function Login() {
   }
 
   return (
-    <section className="relative isolate flex min-h-screen items-center justify-center px-6 pb-16 pt-32">
-      <div className="absolute left-1/2 top-20 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-[#168BFF]/20 blur-[140px]" />
+    <section className="flex min-h-screen items-center justify-center px-6 pb-16 pt-28">
+      <div className="relative w-full max-w-md border border-white/10 bg-panel p-8 sm:p-10">
+        <FrameCorners className="-inset-3 text-azul" />
 
-      <div className="w-full max-w-md rounded-3xl border border-white/10 bg-[#0B101C] p-8 sm:p-10">
-        <h1 className="text-3xl font-black">Entrar no MoodShot</h1>
+        <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-laranja">
+          <span className="rec-dot h-2 w-2 rounded-full bg-laranja" />
+          Acesso
+        </p>
+        <h1 className="condensed mt-4 text-5xl font-extrabold leading-[0.92] tracking-tight">
+          Entrar no MoodShot
+        </h1>
         <p className="mt-3 text-slate-400">
           Acesse seu painel para registrar e organizar seus momentos.
         </p>
 
         {location.state?.from && (
-          <p className="mt-6 rounded-lg border border-[#FF7A00]/40 bg-[#FF7A00]/10 p-3 text-sm text-orange-200">
+          <p className="mt-6 border-l-2 border-laranja bg-laranja/10 p-3 text-sm text-orange-200">
             Faça login para acessar essa página.
           </p>
         )}
@@ -87,7 +94,7 @@ function Login() {
           />
 
           {apiError && (
-            <p role="alert" className="rounded-lg bg-red-500/10 p-3 text-sm text-red-300">
+            <p role="alert" className="border-l-2 border-red-400 bg-red-500/10 p-3 text-sm text-red-300">
               {apiError}
             </p>
           )}
@@ -95,22 +102,22 @@ function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-lg bg-[#168BFF] px-6 py-3 font-bold transition hover:bg-[#0874df] disabled:cursor-not-allowed disabled:opacity-60"
+            className="w-full bg-azul px-6 py-4 font-bold transition hover:bg-[#0874df] disabled:cursor-not-allowed disabled:opacity-60"
           >
             {loading ? "Entrando..." : "Entrar"}
           </button>
         </form>
 
-        <div className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-slate-300">
-          <p className="font-bold text-white">Usuário de teste</p>
-          <p className="mt-1">
-            Usuário: <code className="text-[#6BB5FF]">teste</code> · Senha:{" "}
-            <code className="text-[#6BB5FF]">teste123</code>
+        <div className="mt-6 border border-dashed border-white/15 p-4 font-mono text-xs text-slate-400">
+          <p className="uppercase tracking-widest text-slate-500">Usuário de teste</p>
+          <p className="mt-2">
+            usuário: <span className="text-azul-claro">teste</span> · senha:{" "}
+            <span className="text-azul-claro">teste123</span>
           </p>
         </div>
 
         <Link to="/" className="mt-6 block text-center text-sm text-slate-400 hover:text-white">
-          Voltar para a página inicial
+          ← Voltar para a página inicial
         </Link>
       </div>
     </section>
