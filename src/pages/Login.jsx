@@ -104,8 +104,8 @@ function Login() {
         <div className="mt-6 rounded-lg border border-white/10 bg-white/5 p-4 text-sm text-slate-300">
           <p className="font-bold text-white">Usuário de teste</p>
           <p className="mt-1">
-            Usuário: <code className="text-[#6BB5FF]">emilys</code> · Senha:{" "}
-            <code className="text-[#6BB5FF]">emilyspass</code>
+            Usuário: <code className="text-[#6BB5FF]">teste</code> · Senha:{" "}
+            <code className="text-[#6BB5FF]">teste123</code>
           </p>
         </div>
 
