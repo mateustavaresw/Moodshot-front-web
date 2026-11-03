@@ -8,7 +8,7 @@ Nesta Sprint 4, a landing page da Sprint 3 evoluiu para uma aplicação React co
 
 ## 🔗 Links
 
-- **Deploy na Vercel:** https://SEU-PROJETO.vercel.app
+- **Deploy na Vercel:** https://moodshot-three.vercel.app
 - **Repositório no GitHub:** https://github.com/mateustavaresw/Moodshot-front-web
 
 ## 💻 Tecnologias utilizadas
