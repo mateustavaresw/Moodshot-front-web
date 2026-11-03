@@ -112,7 +112,7 @@ O login confere esse usuário no `authService.js` e faz a autenticação na Dumm
 
 ## 🤖 Uso de Inteligência Artificial
 
-Usamos o Claude (IA da Anthropic), pelo VS Code, como apoio na Sprint 4: ele ajudou a gerar o código da migração para React (rotas, hooks, login e integração com as APIs) e a refazer o visual da interface. A equipe revisou, configurou as APIs, aprovou o visual e testou o projeto. A ideia do produto, a pesquisa, a persona e as cores são da equipe.
+Usamos o Claude como apoio na Sprint 4: ele ajudou a refazer o visual da interface. A equipe revisou, configurou as APIs, aprovou o visual e testou o projeto. A ideia do produto, a pesquisa, a persona e as cores são da equipe.
 
 ## 👥 Equipe
 
