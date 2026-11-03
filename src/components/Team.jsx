@@ -1,22 +1,35 @@
 import SectionHeader from "./SectionHeader";
+import FrameCorners from "./FrameCorners";
+
+// "José Henrique" -> "JH"
+function iniciais(nome) {
+  return nome
+    .split(" ")
+    .map((parte) => parte[0])
+    .join("");
+}
 
 function Team({ members }) {
   return (
-    <section id="equipe" className="border-t border-white/10 bg-[#0B101C] py-24">
-      <div className="mx-auto max-w-7xl px-5 lg:px-10">
-        <SectionHeader center label="Equipe" color="#FF7A00" title="Quem criou o MoodShot" />
+    <section id="equipe" className="border-b border-white/10 py-24">
+      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <SectionHeader number="07" label="Equipe" color="#FF7A00" title="Quem criou o MoodShot" />
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+        {/* tipo uma folha de contato de fotografia */}
+        <div className="mt-14 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
           {members.map((member, index) => (
-            <article
-              key={member.rm}
-              className="rounded-3xl border border-white/15 bg-white/5 p-6 text-center"
-            >
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-[#168BFF] to-[#8B5CF6] text-2xl font-black">
-                {index + 1}
+            <article key={member.rm}>
+              <div className="relative flex aspect-square items-center justify-center bg-gradient-to-br from-azul/25 via-roxo/20 to-transparent">
+                <FrameCorners className="inset-3 text-white/40" />
+                <span className="condensed text-6xl font-extrabold text-white/90">
+                  {iniciais(member.name)}
+                </span>
               </div>
-              <h3 className="mt-5 text-lg font-black">{member.name}</h3>
-              <p className="mt-2 text-sm text-slate-400">{member.rm}</p>
+              <p className="mt-4 font-mono text-[11px] uppercase tracking-widest text-slate-500">
+                Frame {index + 1}/{members.length}
+              </p>
+              <h3 className="mt-1 text-lg font-bold">{member.name}</h3>
+              <p className="font-mono text-xs text-slate-400">{member.rm}</p>
             </article>
           ))}
         </div>
