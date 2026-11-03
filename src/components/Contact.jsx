@@ -19,12 +19,6 @@ function Contact() {
           <p className="mt-6 max-w-md leading-7 text-slate-300">
             Envie uma mensagem para a equipe MoodShot.
           </p>
-          <a
-            href="mailto:Apexxon.consultorio@gmail.com"
-            className="mt-8 inline-block font-mono text-sm text-azul-claro underline decoration-white/20 underline-offset-8 transition hover:decoration-azul"
-          >
-            Apexxon.consultorio@gmail.com
-          </a>
         </div>
 
         <form
