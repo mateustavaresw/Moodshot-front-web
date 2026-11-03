@@ -1,5 +1,5 @@
-// TODO: trocar pela url do nosso projeto no mockapi (sem a barra no final)
-const API_URL = "https://SEU-ID.mockapi.io/api/v1";
+// url do nosso projeto no mockapi
+const API_URL = "https://6ae9e8363d3dd3d37be5e0a7.mockapi.io/api/v1";
 
 const MOMENTOS_URL = `${API_URL}/momentos`;
 
