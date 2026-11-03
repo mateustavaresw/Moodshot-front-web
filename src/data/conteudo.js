@@ -59,6 +59,7 @@ export const moods = [
     emoji: "🎉",
     from: "#FF7A00",
     to: "#8B5CF6",
+    exif: "ISO 1600 · 1/60 · f/1.8",
     caption: "Filtros vibrantes e enquadramento automático para não perder o clima da balada.",
   },
   {
@@ -67,6 +68,7 @@ export const moods = [
     emoji: "📚",
     from: "#168BFF",
     to: "#6BB5FF",
+    exif: "ISO 200 · 1/125 · f/4",
     caption: "Modo foco com boa nitidez para registrar anotações, slides e quadros.",
   },
   {
@@ -75,6 +77,7 @@ export const moods = [
     emoji: "✈️",
     from: "#8B5CF6",
     to: "#168BFF",
+    exif: "ISO 100 · 1/500 · f/8",
     caption: "Sugestão de composição para paisagens e pontos turísticos em segundos.",
   },
   {
@@ -83,6 +86,7 @@ export const moods = [
     emoji: "❤️",
     from: "#FF7A00",
     to: "#FF5CA8",
+    exif: "ISO 400 · 1/160 · f/1.4",
     caption: "Retratos com profundidade e tons quentes para momentos a dois.",
   },
 ];

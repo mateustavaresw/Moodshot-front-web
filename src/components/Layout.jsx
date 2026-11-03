@@ -7,7 +7,9 @@ function Layout() {
   useScrollToHash();
 
   return (
-    <div className="flex min-h-screen flex-col overflow-hidden bg-[#070a12] text-white">
+    // overflow-x-clip em vez de hidden pq o hidden quebrava o sticky do painel
+    <div className="flex min-h-screen flex-col overflow-x-clip bg-ink text-white">
+      <div className="grain" aria-hidden="true" />
       <Navbar links={navLinks} />
       <main className="flex-1">
         <Outlet />
