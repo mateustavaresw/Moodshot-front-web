@@ -46,9 +46,15 @@ function MomentoForm({ onSave }) {
     <form
       onSubmit={handleSubmit(onSubmit)}
       noValidate
-      className="space-y-5 rounded-3xl border border-white/10 bg-[#0B101C] p-6 sm:p-8"
+      className="space-y-5 border border-white/10 bg-panel p-6 sm:p-8"
     >
-      <h2 className="text-2xl font-black">Novo momento</h2>
+      <div>
+        <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-[0.2em] text-laranja">
+          <span className="rec-dot h-2 w-2 rounded-full bg-laranja" />
+          Novo registro
+        </p>
+        <h2 className="condensed mt-3 text-3xl font-extrabold uppercase">Novo momento</h2>
+      </div>
 
       <FormField
         as="select"
@@ -92,7 +98,7 @@ function MomentoForm({ onSave }) {
       <button
         type="submit"
         disabled={saving}
-        className="w-full rounded-lg bg-[#168BFF] px-6 py-3 font-bold transition hover:bg-[#0874df] disabled:opacity-60"
+        className="w-full bg-azul px-6 py-4 font-bold transition hover:bg-[#0874df] disabled:opacity-60"
       >
         {saving ? "Salvando..." : "Salvar momento"}
       </button>
