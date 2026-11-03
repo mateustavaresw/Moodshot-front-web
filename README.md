@@ -112,7 +112,7 @@ O login confere esse usuário no `authService.js` e faz a autenticação na Dumm
 
 ## 🤖 Uso de Inteligência Artificial
 
-Utilizamos IA (Claude, da Anthropic) como apoio durante a Sprint 4. Ela ajudou a planejar a evolução do projeto da Sprint 3 para React com rotas, a sugerir a organização das pastas (páginas, componentes, hooks, contextos e serviços), a gerar o código dos hooks customizados, da autenticação com a DummyJSON e da integração com o MockAPI, e a explicar cada parte do código. Também foi usada no VS Code (Claude Code) para aplicar as mudanças no projeto e para refazer o visual da interface no estilo de visor de câmera, mantendo as cores da identidade do MoodShot. A equipe revisou o código, configurou as APIs, aprovou o novo visual e testou a aplicação antes da entrega. A ideia do produto, a pesquisa, a persona e a identidade visual (paleta de cores) foram desenvolvidas pela equipe.
+Usamos o Claude (IA da Anthropic), pelo VS Code, como apoio na Sprint 4: ele ajudou a gerar o código da migração para React (rotas, hooks, login e integração com as APIs) e a refazer o visual da interface. A equipe revisou, configurou as APIs, aprovou o visual e testou o projeto. A ideia do produto, a pesquisa, a persona e as cores são da equipe.
 
 ## 👥 Equipe
 
