@@ -1,77 +1,102 @@
-function Hero() {
+import { useState } from "react";
+import FrameCorners from "./FrameCorners";
+import MoodIcon from "./MoodIcon";
+
+function Hero({ moods }) {
+  // mood selecionado no visor, comeca no primeiro
+  const [ativo, setAtivo] = useState(moods[0]);
+
   return (
-    <section id="inicio" className="relative isolate pt-32">
-      <div className="absolute left-1/2 top-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 rounded-full bg-[#168BFF]/20 blur-[140px]" />
-      <div className="absolute right-0 top-52 -z-10 h-72 w-72 rounded-full bg-[#8B5CF6]/20 blur-[120px]" />
-
-      <div className="mx-auto grid min-h-[760px] max-w-7xl items-center gap-14 px-6 pb-16 lg:grid-cols-2 lg:px-8">
+    <section id="inicio" className="relative border-b border-white/10 pt-20">
+      <div className="mx-auto grid max-w-7xl gap-14 px-6 py-16 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:px-8 lg:py-24">
         <div>
-          <span className="inline-flex rounded-full border border-[#168BFF]/40 bg-[#168BFF]/10 px-4 py-2 text-sm font-semibold text-[#6BB5FF]">
-            Uma nova forma de registrar momentos
-          </span>
+          <p className="flex flex-wrap items-center gap-x-5 gap-y-2 font-mono text-xs uppercase tracking-[0.2em] text-slate-400">
+            <span className="flex items-center gap-2 text-laranja">
+              <span className="rec-dot h-2 w-2 rounded-full bg-laranja" />
+              Rec
+            </span>
+            <span>Apexxon Consultoria × Jovi</span>
+          </p>
 
-          <h1 className="mt-7 text-5xl font-black leading-[0.96] tracking-tight sm:text-6xl lg:text-7xl">
-            A câmera que entende o seu{" "}
-            <span className="text-[#168BFF]">jeito.</span>
+          <h1 className="condensed mt-8 text-6xl font-extrabold leading-[0.86] tracking-tight sm:text-7xl lg:text-[6.5rem]">
+            A câmera que entende o seu <span className="text-azul">jeito.</span>
           </h1>
 
-          <p className="mt-7 max-w-xl text-lg leading-8 text-slate-300">
+          <p className="mt-8 max-w-lg text-lg leading-8 text-slate-300">
             MoodShot é uma proposta de experiência de câmera para o próximo
             smartphone Jovi: mais contextual, simples e pronta para compartilhar.
           </p>
 
-          <div className="mt-9 flex flex-col gap-4 sm:flex-row">
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5">
             <a
               href="#solucao"
-              className="rounded-full bg-[#168BFF] px-7 py-4 text-center font-bold transition hover:-translate-y-1 hover:bg-[#0874df]"
+              className="bg-azul px-7 py-4 font-bold transition hover:bg-[#0874df]"
             >
               Descobrir a solução
             </a>
 
             <a
               href="#experiencia"
-              className="rounded-full border border-white/20 px-7 py-4 text-center font-bold transition hover:border-white hover:bg-white/5"
+              className="group font-mono text-sm uppercase tracking-[0.15em] text-slate-300 transition hover:text-white"
             >
-              Ver como funciona
+              Ver como funciona{" "}
+              <span className="inline-block transition group-hover:translate-x-1">→</span>
             </a>
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-md">
-          <div className="absolute -inset-8 rounded-[3rem] bg-gradient-to-tr from-[#168BFF]/30 via-[#8B5CF6]/20 to-[#FF7A00]/20 blur-3xl" />
+        <div className="mx-auto w-full max-w-md">
+          {/* visor da camera */}
+          <div
+            className="relative aspect-[4/5] overflow-hidden"
+            style={{ background: `linear-gradient(160deg, ${ativo.from}, ${ativo.to} 85%)` }}
+          >
+            {/* linhas da regra dos tercos */}
+            <div className="absolute inset-y-0 left-1/3 right-1/3 border-x border-white/20" />
+            <div className="absolute inset-x-0 top-1/3 bottom-1/3 border-y border-white/20" />
 
-          <div className="relative overflow-hidden rounded-[3rem] border border-white/15 bg-[#111827] p-4 shadow-2xl">
-            <div className="rounded-[2.4rem] bg-gradient-to-b from-[#1B2942] to-[#080D18] p-6">
-              <div className="flex items-center justify-between text-xs text-slate-400">
-                <span>09:41</span>
-                <span>JOVI</span>
-              </div>
+            <FrameCorners className="inset-4 text-white" />
 
-              <div className="mt-6 flex min-h-[420px] flex-col justify-between rounded-[2rem] bg-[radial-gradient(circle_at_top,#8B5CF6_0%,#168BFF_35%,#0C1220_72%)] p-6">
-                <div className="flex justify-between">
-                  <span className="rounded-full bg-black/25 px-3 py-1 text-xs backdrop-blur">
-                    MoodShot
-                  </span>
-                  <span className="rounded-full bg-black/25 px-3 py-1 text-xs backdrop-blur">
-                    IA ativa
-                  </span>
-                </div>
+            <div className="absolute inset-x-8 top-8 flex items-center justify-between font-mono text-[11px] tracking-widest text-white/90">
+              <span>{ativo.exif}</span>
+              <span className="flex items-center gap-1.5">
+                <span className="rec-dot h-1.5 w-1.5 rounded-full bg-white" />
+                AI
+              </span>
+            </div>
 
-                <div>
-                  <span className="rounded-full bg-[#FF7A00] px-3 py-1 text-xs font-bold">
-                    Golden Hour
-                  </span>
-                  <h2 className="mt-3 text-3xl font-black">Seu momento, sua vibe.</h2>
-                </div>
-              </div>
+            {/* quadradinho de foco */}
+            <div className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 border border-laranja" />
 
-              <div className="mt-5 flex items-center justify-between">
-                <span className="text-sm text-slate-400">Personalize seu clique</span>
-                <div className="h-14 w-14 rounded-full border-4 border-white bg-[#168BFF]" />
-                <span className="text-sm text-slate-400">Compartilhe</span>
-              </div>
+            <div className="absolute inset-x-8 bottom-8">
+              <MoodIcon type={ativo.id} />
+              <p className="condensed mt-3 text-4xl font-extrabold uppercase">
+                Modo {ativo.label}
+              </p>
+              <p className="mt-2 max-w-xs text-sm leading-6 text-white/85">{ativo.caption}</p>
             </div>
           </div>
+
+          <div className="mt-4 grid grid-cols-4 gap-px bg-white/10" role="group" aria-label="Escolha um mood">
+            {moods.map((mood) => (
+              <button
+                key={mood.id}
+                type="button"
+                onClick={() => setAtivo(mood)}
+                aria-pressed={ativo.id === mood.id}
+                className={`px-2 py-3 font-mono text-[11px] uppercase tracking-wider transition ${
+                  ativo.id === mood.id
+                    ? "bg-white text-ink"
+                    : "bg-ink text-slate-400 hover:text-white"
+                }`}
+              >
+                {mood.label}
+              </button>
+            ))}
+          </div>
+          <p className="mt-3 font-mono text-[11px] uppercase tracking-widest text-slate-500">
+            ↑ toque num mood e veja o visor mudar
+          </p>
         </div>
       </div>
     </section>

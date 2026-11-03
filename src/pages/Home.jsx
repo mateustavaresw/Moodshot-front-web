@@ -21,7 +21,7 @@ import {
 function Home() {
   return (
     <>
-      <Hero />
+      <Hero moods={moods} />
       <Research items={research} />
       <Persona persona={persona} />
       <Solution items={solutions} />
